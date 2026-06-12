@@ -473,6 +473,7 @@ section { padding: 88px 5vw; }
   background: rgba(255,255,255,0.04);
   border: 0.5px solid rgba(255,255,255,0.1);
   border-radius: 16px; padding: 34px 30px;
+  scroll-margin-top: 84px;
 }
 .form-head { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: white; margin-bottom: 4px; }
 .form-sub-text { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
@@ -555,11 +556,12 @@ footer a:hover { color: var(--gold); }
 .mobile-menu {
   display: none;
   position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(16px);
+  background: var(--white);
   border-bottom: 0.5px solid var(--border);
+  box-shadow: 0 16px 28px rgba(0,0,0,0.16);
   padding: 12px 5vw 20px;
-  flex-direction: column; gap: 2px;
+  flex-direction: column; align-items: stretch; justify-content: flex-start;
+  height: auto; gap: 2px;
   transform: translateY(-8px); opacity: 0;
   transition: transform 0.22s ease, opacity 0.22s ease;
   pointer-events: none;
@@ -673,7 +675,7 @@ footer a:hover { color: var(--gold); }
       USC's Chinese traditional music ensemble is back, blending centuries-old instruments with contemporary energy. We're looking for musicians and members to build our next chapter, and we bring that same sound to student films and recording sessions along the way.
     </p>
     <div class="hero-actions">
-      <a href="#join" onclick="switchFormTab('musician')" class="btn-primary">Join the Ensemble →</a>
+      <a href="#signup" onclick="switchFormTab('musician')" class="btn-primary">Join the Ensemble →</a>
       <a href="#scorers" class="btn-outline">Filmmakers, work with us</a>
     </div>
   </div>
@@ -694,7 +696,7 @@ footer a:hover { color: var(--gold); }
             <li>Founded Spring 2026, growing for Fall 2026</li>
             <li>Open to students, faculty & alumni</li>
           </ul>
-          <a href="#join" onclick="switchFormTab('musician')" class="hc-link">Express interest →</a>
+          <a href="#signup" onclick="switchFormTab('musician')" class="hc-link">Express interest →</a>
         </div>
         <div id="ht-scorers" class="hc-panel">
           <div class="hc-title">Your score <span class="r">called.</span><br>It wants a <span class="g">guzheng.</span></div>
@@ -901,7 +903,7 @@ footer a:hover { color: var(--gold); }
           </div>
         </div>
       </div>
-      <a href="#join" onclick="switchFormTab('scorer')" class="btn-cardinal" style="margin-top:24px;">
+      <a href="#signup" onclick="switchFormTab('scorer')" class="btn-cardinal" style="margin-top:24px;">
         Reach out with your project →
       </a>
     </div>
@@ -1059,7 +1061,7 @@ footer a:hover { color: var(--gold); }
       </div>
     </div>
 
-    <div class="join-form">
+    <div class="join-form" id="signup">
       <div class="form-head">Express Interest</div>
       <div class="form-sub-text">Musician or film scorer, tell us a little about yourself.</div>
 
