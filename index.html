@@ -3,21 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>USC Chinese Music Ensemble — 中国音乐乐团</title>
-<meta name="description" content="USC's Chinese traditional music ensemble — welcoming musicians and film scorers for Fall 2026. Founded Spring 2026, reborn from Eastern Chamber.">
-<meta name="theme-color" content="#990000">
-
-<!-- Open Graph (for link previews on iMessage, Discord, Instagram DMs, etc.) -->
-<meta property="og:title" content="USC Chinese Music Ensemble">
-<meta property="og:description" content="Ancient music. New chapter. Welcoming musicians & film scorers for Fall 2026.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://uscchinesemusic.github.io">
-<meta property="og:image" content="https://uscchinesemusic.github.io/og-image.png">
-
-<!-- Twitter/X card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="USC Chinese Music Ensemble">
-<meta name="twitter:description" content="Ancient music. New chapter. Welcoming musicians & film scorers for Fall 2026.">
+<title>USC Chinese Music Ensemble · 中国音乐乐团</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -96,13 +82,6 @@ nav {
 }
 .hero-left { position: relative; z-index: 2; max-width: 560px; flex: 1; }
 .hero-right { position: relative; z-index: 2; width: 340px; flex-shrink: 0; }
-
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 11px; font-weight: 600; letter-spacing: 0.16em;
-  color: var(--gold); text-transform: uppercase; margin-bottom: 20px;
-}
-.eyebrow-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--cardinal); }
 
 .hero-revival {
   display: inline-flex; align-items: center; gap: 8px;
@@ -273,12 +252,15 @@ section { padding: 88px 5vw; }
 .instr-card:hover .ic-desc, .instr-card:hover .ic-tag { color: white; }
 .instr-card:hover .ic-tag { background: rgba(255,255,255,0.16); }
 .ic-icon { font-size: 26px; margin-bottom: 12px; }
-.ic-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 17px; font-weight: 700; color: var(--ink);
-  margin-bottom: 3px; transition: color 0.25s;
+.ic-zh {
+  font-size: 28px; color: var(--ink); letter-spacing: 0.08em;
+  margin-bottom: 4px; line-height: 1.2; transition: color 0.25s;
 }
-.ic-zh { font-size: 16px; color: var(--text-muted); letter-spacing: 0.14em; margin-bottom: 10px; transition: color 0.25s; }
+.ic-name {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--text-muted);
+  margin-bottom: 10px; transition: color 0.25s;
+}
 .ic-desc { font-size: 11px; color: var(--text-muted); line-height: 1.6; transition: color 0.25s; }
 .ic-tag {
   display: inline-block; margin-top: 10px;
@@ -293,8 +275,71 @@ section { padding: 88px 5vw; }
 }
 .instr-footnote strong { color: var(--ink); font-weight: 600; }
 
+/* ── LISTEN ── */
+#listen { background: var(--ink); }
+#listen .sec-eyebrow { color: var(--gold); }
+#listen .sec-title { color: white; }
+#listen .sec-sub { color: rgba(255,255,255,0.5); }
+.video-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+  gap: 20px; margin-bottom: 36px;
+}
+.video-card {
+  background: rgba(255,255,255,0.04);
+  border: 0.5px solid rgba(255,255,255,0.12);
+  border-radius: 14px; overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.video-card:hover { border-color: rgba(255,199,44,0.4); transform: translateY(-2px); }
+.video-card iframe {
+  width: 100%; aspect-ratio: 16 / 9;
+  display: block; border: none; background: #000;
+}
+.vc-info { padding: 16px 18px 18px; }
+.vc-tag {
+  display: inline-block; margin-bottom: 10px;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold);
+  background: rgba(255,199,44,0.08); border: 1px solid rgba(255,199,44,0.25);
+  padding: 3px 9px; border-radius: 4px;
+}
+.vc-title { font-size: 14px; font-weight: 600; color: white; margin-bottom: 4px; line-height: 1.45; }
+.vc-meta { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.55; }
+
+/* Featured "latest" video */
+.video-feature {
+  display: grid; grid-template-columns: 1.5fr 1fr; gap: 0;
+  align-items: stretch; margin-bottom: 32px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,199,44,0.4);
+  border-radius: 16px; overflow: hidden;
+  box-shadow: 0 8px 40px rgba(255,199,44,0.06);
+}
+.video-feature iframe {
+  width: 100%; height: 100%; min-height: 300px;
+  aspect-ratio: 16 / 9; display: block; border: none; background: #000;
+}
+.vf-info { padding: 30px 34px; display: flex; flex-direction: column; justify-content: center; }
+.vf-badge {
+  display: inline-flex; align-items: center; gap: 7px; align-self: flex-start;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink); background: var(--gold);
+  padding: 5px 12px; border-radius: 5px; margin-bottom: 18px;
+}
+.vf-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: white; line-height: 1.22; margin-bottom: 12px; }
+.vf-meta { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 20px; }
+.vf-link {
+  font-size: 13px; font-weight: 600; color: var(--gold); text-decoration: none; align-self: flex-start;
+  border-bottom: 1px solid rgba(255,199,44,0.35); padding-bottom: 1px; transition: opacity 0.2s;
+}
+.vf-link:hover { opacity: 0.7; }
+@media (max-width: 760px) {
+  .video-feature { grid-template-columns: 1fr; }
+  .vf-info { padding: 24px; }
+}
+
 /* ── ABOUT ── */
-#about { background: var(--parchment); }
+#about { background: var(--white); }
 .about-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
 .about-body { font-size: 15px; line-height: 1.9; color: var(--charcoal); }
 .about-body p + p { margin-top: 16px; }
@@ -329,6 +374,86 @@ section { padding: 88px 5vw; }
 }
 .open-badge strong { color: var(--gold); font-weight: 600; }
 
+/* ── DONATE ── */
+#donate { background: var(--white); }
+.donate-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; margin-bottom: 40px;
+}
+.donate-card {
+  border: 0.5px solid var(--border); border-radius: 14px;
+  padding: 32px 28px; background: var(--white);
+  display: flex; flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.donate-card:hover { border-color: var(--cardinal); box-shadow: 0 4px 20px rgba(153,0,0,0.07); }
+.donate-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 700; color: var(--ink);
+  margin-bottom: 8px;
+}
+.donate-card-body {
+  font-size: 13px; color: var(--text-muted);
+  line-height: 1.75; flex: 1; margin-bottom: 22px;
+}
+.donate-card-list {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 6px; margin-bottom: 24px;
+}
+.donate-card-list li {
+  display: flex; gap: 8px; font-size: 12px;
+  color: var(--charcoal); line-height: 1.5;
+}
+.donate-card-list li::before { content: '—'; color: var(--cardinal); font-weight: 700; flex-shrink: 0; }
+.btn-donate {
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  border: 1.5px solid var(--cardinal); color: var(--cardinal);
+  font-size: 13px; font-weight: 600; padding: 10px 18px;
+  border-radius: 7px; text-decoration: none;
+  transition: background 0.2s, color 0.2s; margin-top: auto;
+}
+.btn-donate:hover { background: var(--cardinal); color: white; }
+.btn-donate-filled {
+  background: var(--cardinal); color: white;
+  border-color: var(--cardinal);
+}
+.btn-donate-filled:hover { background: var(--cardinal-deep); color: white; }
+.donate-note {
+  padding: 18px 22px; background: var(--parchment);
+  border: 0.5px solid var(--border); border-radius: 10px;
+  font-size: 13px; color: var(--text-muted); line-height: 1.7;
+}
+.donate-note strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 860px) { .donate-grid { grid-template-columns: 1fr; } }
+
+/* ── INSTAGRAM ── */
+#instagram { background: var(--parchment); }
+.insta-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
+.insta-pitch { display: flex; flex-direction: column; gap: 20px; }
+.insta-perk { display: flex; gap: 14px; align-items: flex-start; }
+.insta-perk-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--cardinal); flex-shrink: 0; margin-top: 7px;
+}
+.insta-perk-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.insta-perk-body { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+.insta-handle-card {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--white); border: 0.5px solid var(--border);
+  border-radius: 10px; padding: 14px 18px; margin-top: 6px;
+  text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.insta-handle-card:hover { border-color: var(--cardinal); box-shadow: 0 2px 12px rgba(153,0,0,0.07); }
+.insta-handle-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+.insta-handle-sub { font-size: 11px; color: var(--text-muted); }
+.insta-feed-wrap {
+  background: var(--white); border: 0.5px solid var(--border);
+  border-radius: 14px; overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+}
+.insta-feed-wrap iframe { width: 100%; height: 760px; border: none; display: block; }
+.insta-feed-note { text-align: center; font-size: 11px; color: var(--text-muted); margin-top: 10px; }
+
 /* ── JOIN ── */
 #join { background: var(--ink); }
 #join .sec-title { color: white; }
@@ -337,11 +462,7 @@ section { padding: 88px 5vw; }
 
 .join-layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; align-items: start; }
 .join-perks { display: flex; flex-direction: column; gap: 20px; }
-.perk { display: flex; gap: 14px; align-items: flex-start; }
-.perk-icon {
-  width: 10px; height: 10px; border-radius: 50%; margin-top: 6px;
-  background: var(--cardinal); flex-shrink: 0;
-}
+.perk { display: flex; gap: 14px; align-items: flex-start; border-left: 2px solid var(--cardinal); padding-left: 14px; }
 .perk-title { font-size: 14px; font-weight: 600; color: white; margin-bottom: 2px; }
 .perk-body { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.6; }
 
@@ -359,6 +480,7 @@ section { padding: 88px 5vw; }
   background: rgba(255,255,255,0.04);
   border: 0.5px solid rgba(255,255,255,0.1);
   border-radius: 16px; padding: 34px 30px;
+  scroll-margin-top: 84px;
 }
 .form-head { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: white; margin-bottom: 4px; }
 .form-sub-text { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 24px; }
@@ -418,12 +540,90 @@ footer a { color: rgba(255,255,255,0.35); text-decoration: none; transition: col
 footer a:hover { color: var(--gold); }
 .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
 
+/* ── HAMBURGER ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 40px; height: 40px;
+  background: transparent; border: none; cursor: pointer; padding: 4px;
+  border-radius: 7px; transition: background 0.2s;
+}
+.nav-hamburger:hover { background: var(--mist); }
+.nav-hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--charcoal); border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s, width 0.25s;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile drawer */
+.mobile-menu {
+  display: none;
+  position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+  background: var(--white);
+  border-bottom: 0.5px solid var(--border);
+  box-shadow: 0 16px 28px rgba(0,0,0,0.16);
+  padding: 12px 5vw 20px;
+  flex-direction: column; align-items: stretch; justify-content: flex-start;
+  height: auto; gap: 2px;
+  transform: translateY(-8px); opacity: 0;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  pointer-events: none;
+}
+.mobile-menu.open {
+  display: flex;
+  transform: translateY(0); opacity: 1;
+  pointer-events: all;
+}
+.mobile-menu a {
+  font-size: 15px; font-weight: 500; color: var(--charcoal);
+  text-decoration: none; padding: 11px 4px;
+  border-bottom: 0.5px solid var(--border);
+  transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--cardinal); }
+.mobile-menu a:last-child {
+  border-bottom: none; margin-top: 8px;
+  background: var(--cardinal); color: white;
+  text-align: center; border-radius: 8px;
+  padding: 13px; font-weight: 600;
+}
+.mobile-menu a:last-child:hover { background: var(--cardinal-deep); color: white; }
+
+/* ── SCROLL REVEAL & HERO ENTRANCE ── */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0; transform: translateY(26px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    will-change: opacity, transform;
+  }
+  .reveal.in-view { opacity: 1; transform: none; }
+
+  .hero-left > * { opacity: 0; animation: heroRise 0.85s cubic-bezier(0.22,1,0.36,1) both; }
+  .hero-left > *:nth-child(1) { animation-delay: 0.10s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.18s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.26s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.34s; }
+  .hero-left > *:nth-child(5) { animation-delay: 0.42s; }
+  .hero-left > *:nth-child(6) { animation-delay: 0.50s; }
+  .hero-right { opacity: 0; animation: heroRise 0.95s cubic-bezier(0.22,1,0.36,1) 0.55s both; }
+}
+@keyframes heroRise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+
 @media (max-width: 860px) {
   #hero { flex-direction: column; }
   .hero-right { width: 100%; }
-  .scorers-layout, .about-layout, .join-layout { grid-template-columns: 1fr; }
+  .scorers-layout, .about-layout, .join-layout, .insta-layout { grid-template-columns: 1fr; }
+  .insta-feed-wrap iframe { height: 620px; }
   .form-row { grid-template-columns: 1fr; }
   .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
 }
 </style>
 </head>
@@ -436,11 +636,25 @@ footer a:hover { color: var(--gold); }
     Chinese Music Ensemble
   </a>
   <ul class="nav-links">
-    <li><a href="#scorers">For Scorers</a></li>
     <li><a href="#instruments">Instruments</a></li>
+    <li><a href="#listen">Listen</a></li>
     <li><a href="#about">Our Story</a></li>
+    <li><a href="#scorers">For Scorers</a></li>
+    <li><a href="#donate">Donate</a></li>
     <li><a href="#join" class="nav-cta">Join / Hire Us</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="#instruments" onclick="closeMobileMenu()">Instruments</a>
+  <a href="#listen" onclick="closeMobileMenu()">Listen</a>
+  <a href="#about" onclick="closeMobileMenu()">Our Story</a>
+  <a href="#scorers" onclick="closeMobileMenu()">For Scorers</a>
+  <a href="#donate" onclick="closeMobileMenu()">Donate</a>
+  <a href="#join" onclick="closeMobileMenu()">Join / Hire Us</a>
 </nav>
 
 <!-- HERO -->
@@ -452,24 +666,20 @@ footer a:hover { color: var(--gold); }
   </svg>
 
   <div class="hero-left">
-    <div class="hero-eyebrow">
-      <span class="eyebrow-dot"></span>
-      University of Southern California · Student Organization
-    </div>
     <div class="hero-revival">
       <span class="revival-dot"></span>
-      Founded Spring 2026 — growing our roster for Fall 2026
+      Founded Spring 2026, growing our roster for Fall 2026
     </div>
     <h1 class="hero-title">
       Ancient Music.<br>New <span class="accent">Chapter.</span>
     </h1>
     <p class="hero-zh">中国音乐乐团</p>
     <p class="hero-desc">
-      USC's Chinese traditional music ensemble is back. We blend centuries-old instruments with contemporary energy — and we're looking for musicians and film scorers alike.
+      USC's Chinese traditional music ensemble is back, blending ancient instruments with contemporary energy. We're looking for musicians and members to build our next chapter, and we bring that same sound to student films and recording sessions along the way.
     </p>
     <div class="hero-actions">
-      <a href="#join" class="btn-primary">Join the Ensemble →</a>
-      <a href="#scorers" class="btn-outline">Hire Us for Your Score</a>
+      <a href="#signup" onclick="switchFormTab('musician')" class="btn-primary">Join the Ensemble →</a>
+      <a href="#scorers" class="btn-outline">Filmmakers, work with us</a>
     </div>
   </div>
 
@@ -482,24 +692,190 @@ footer a:hover { color: var(--gold); }
       <div class="hc-body">
         <div id="ht-musicians" class="hc-panel active">
           <div class="hc-title">Play something that<br>can't be <span class="r">synthesized.</span></div>
-          <p class="hc-text">All skill levels welcome. No audition needed. We play 新民乐 — traditional Chinese instruments fused with pop, rock, electronic, and more.</p>
+          <p class="hc-text">All skill levels welcome. No audition needed. We play 新民乐: traditional Chinese instruments fused with pop, rock, electronic, and more.</p>
           <ul class="hc-list">
-            <li>All Chinese instruments welcome — and many more</li>
+            <li>All Chinese instruments welcome, and many more</li>
             <li>Cellists, double bassists, percussionists encouraged</li>
-            <li>Founded Spring 2026 — growing for Fall 2026</li>
+            <li>Founded Spring 2026, growing for Fall 2026</li>
             <li>Open to students, faculty & alumni</li>
           </ul>
-          <a href="#join" class="hc-link">Express interest →</a>
+          <a href="#signup" onclick="switchFormTab('musician')" class="hc-link">Express interest →</a>
         </div>
         <div id="ht-scorers" class="hc-panel">
           <div class="hc-title">Your score <span class="r">called.</span><br>It wants a <span class="g">guzheng.</span></div>
-          <p class="hc-text">We were hired to perform live instrumentation for a USC short film last year. We want to do more — recording sessions, collaboration, and consultation.</p>
+          <p class="hc-text">We also offer our services to screen scorers and filmmakers who want authentic Chinese instrumentation in their work.</p>
           <ul class="hc-list">
             <li>Recording sessions for shorts, thesis projects & student films</li>
-            <li>Collaboration with screen-scoring students</li>
+            <li>Collaboration with screen scoring students</li>
             <li>Consultation on authentic Chinese musical elements</li>
           </ul>
           <a href="#scorers" class="hc-link">See what we offer →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUMENTS -->
+<section id="instruments">
+  <p class="sec-eyebrow">Instruments We Play</p>
+  <h2 class="sec-title">All Chinese Instruments Welcome</h2>
+  <p class="sec-sub">From ancient to unconventional. If it belongs to the Chinese music tradition, it belongs here.</p>
+
+  <div class="instr-grid">
+    <div class="instr-card">
+      <div class="ic-zh">古筝</div><div class="ic-name">Guzheng</div>
+      <div class="ic-desc">Zither with 21 strings. Sweeping glissandos that can fill a concert hall or anchor a film score.</div>
+      <span class="ic-tag">String</span>
+    </div>
+    <div class="instr-card">
+      <div class="ic-zh">二胡</div><div class="ic-name">Erhu</div>
+      <div class="ic-desc">A spike fiddle with two strings. Sings like a human voice, from deep sorrow to soaring elation.</div>
+      <span class="ic-tag">Bowed</span>
+    </div>
+    <div class="instr-card">
+      <div class="ic-zh">琵琶</div><div class="ic-name">Pipa</div>
+      <div class="ic-desc">A lute shaped like a pear, with sharp percussive attack. Built for virtuosic solos and battle narratives.</div>
+      <span class="ic-tag">String</span>
+    </div>
+    <div class="instr-card">
+      <div class="ic-zh">笛子</div><div class="ic-name">Dizi</div>
+      <div class="ic-desc">Bright, buzzing bamboo flute. The paper membrane gives it a tone unlike anything in the Western tradition.</div>
+      <span class="ic-tag">Wind</span>
+    </div>
+    <div class="instr-card">
+      <div class="ic-zh">箫</div><div class="ic-name">Xiao</div>
+      <div class="ic-desc">A vertical bamboo flute, breathy and meditative. The quiet counterpart to the dizi.</div>
+      <span class="ic-tag">Wind</span>
+    </div>
+    <div class="instr-card">
+      <div class="ic-zh">唢呐</div><div class="ic-name">Suona</div>
+      <div class="ic-desc">A piercing double reed horn that can fill a courtyard. Festive, irreverent, impossible to ignore.</div>
+      <span class="ic-tag">Wind</span>
+    </div>
+    <div class="instr-card">
+      <div class="ic-zh">中／大阮</div><div class="ic-name">Zhongruan · Daruan</div>
+      <div class="ic-desc">Lutes in the mid and bass registers. The harmonic backbone, mellow and round.</div>
+      <span class="ic-tag">String</span>
+    </div>
+    <div class="instr-card">
+      <div class="ic-zh">笙</div><div class="ic-name">Sheng</div>
+      <div class="ic-desc">A mouth organ built from free reeds, one of the world's oldest polyphonic instruments. Rich and harmonically surprising.</div>
+      <span class="ic-tag">Wind</span>
+    </div>
+    <div class="instr-card">
+      <div class="ic-zh">扬琴</div><div class="ic-name">Yangqin</div>
+      <div class="ic-desc">Hammered dulcimer with a sparkling shimmer that recalls a piano. Lights up the upper register of any arrangement.</div>
+      <span class="ic-tag">Percussion</span>
+    </div>
+    <div class="instr-card">
+      <div class="ic-zh">打击乐</div><div class="ic-name">Percussion</div>
+      <div class="ic-desc">Drum set, hand drums, gongs, and woodblocks. The rhythmic engine of the ensemble.</div>
+      <span class="ic-tag">Percussion</span>
+    </div>
+  </div>
+
+  <div class="instr-footnote">
+    Also especially encouraged to join: <strong>Cellists · Double Bassists · Percussionists</strong>. Don't see your instrument? Reach out anyway. If you can make it work with Chinese music, we want to hear it.
+  </div>
+</section>
+
+<!-- LISTEN -->
+<section id="listen">
+  <p class="sec-eyebrow">Hear Us Play</p>
+  <h2 class="sec-title">Don't Take Our Word for It</h2>
+  <p class="sec-sub">Up top, our most recent time on stage: a live collaboration at Collin Juniper's senior saxophone recital. Below, clips from our <strong style="color:var(--gold);font-weight:600;">Eastern Chamber legacy</strong>, the band we originated from.</p>
+
+  <div class="video-feature">
+    <iframe src="https://www.youtube-nocookie.com/embed/rR_5HwoGouw?rel=0" title="Whip the Horse to Transport Grain, live at Collin Juniper's senior recital" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="vf-info">
+      <span class="vf-badge">Latest Performance</span>
+      <div class="vf-title">Whip the Horse to Transport Grain 《扬鞭催马运粮忙》</div>
+      <div class="vf-meta">Our most recent time on stage: the ensemble joining saxophonist Collin Juniper for his senior recital. A live take that crosses genres on this bamboo flute classic, brought into the concert hall.</div>
+      <a href="https://youtu.be/rR_5HwoGouw" target="_blank" rel="noopener" class="vf-link">Watch on YouTube →</a>
+    </div>
+  </div>
+
+  <div class="video-grid">
+    <div class="video-card">
+      <iframe src="https://www.youtube-nocookie.com/embed/ZSUfIEFerkA?rel=0" title="Northeastern Ballad 东北民谣 — Chinese New Year 2024" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="vc-info">
+        <span class="vc-tag">Live · CNY 2024</span>
+        <div class="vc-title">Northeastern Ballad 《东北民谣》</div>
+        <div class="vc-meta">Mao Buyi's wintry folk ballad, reimagined for Chinese ensemble at the 2024 Lunar New Year celebration.</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube-nocookie.com/embed/a3qcFBkz7ko?rel=0" title="Full of Joy 喜洋洋 — Chinese New Year 2024" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="vc-info">
+        <span class="vc-tag">Live · CNY 2024</span>
+        <div class="vc-title">Full of Joy 《喜洋洋》</div>
+        <div class="vc-meta">A festive classic, bright and full of New Year spirit.</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube-nocookie.com/embed/GnBcQMf_HT0?rel=0" title="明月天涯 — Eastern Chamber, Mid-Autumn 2023" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="vc-info">
+        <span class="vc-tag">Mid Autumn 2023</span>
+        <div class="vc-title">Moon at World's End 《明月天涯》</div>
+        <div class="vc-meta">Moonlit and cinematic, performed for the Mid Autumn Festival.</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube-nocookie.com/embed/lxnFg-2JSz8?rel=0" title="Luzhou Moon 庐州月 — Eastern Chamber Cover" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="vc-info">
+        <span class="vc-tag">Pop × Folk</span>
+        <div class="vc-title">Luzhou Moon 《庐州月》</div>
+        <div class="vc-meta">Vae Xu's nostalgic hit on traditional strings and winds.</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube-nocookie.com/embed/eOReufj68Fg?rel=0" title="Pacific Rim Theme — Eastern Chamber Cover" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="vc-info">
+        <span class="vc-tag">Film Score</span>
+        <div class="vc-title">Pacific Rim Theme 《环太平洋》</div>
+        <div class="vc-meta">A blockbuster theme on traditional instruments. This is why film scorers should be paying attention.</div>
+      </div>
+    </div>
+    <div class="video-card">
+      <iframe src="https://www.youtube-nocookie.com/embed/84Bvd8zUPiA?rel=0" title="One Night in Beijing — Eastern Chamber Cover" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="vc-info">
+        <span class="vc-tag">Rock × Folk</span>
+        <div class="vc-title">One Night in Beijing 《北京一夜》</div>
+        <div class="vc-meta">Shin's rock classic reignited. Proof that traditional instruments don't have to sound traditional.</div>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://www.youtube.com/@usceasternchamber666" target="_blank" class="btn-outline">▶ More on our YouTube channel</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-layout">
+    <div>
+      <p class="sec-eyebrow">Our Story</p>
+      <h2 class="sec-title">Rooted in Legacy,<br>Ready for What's Next</h2>
+      <div class="about-body">
+        <p>
+          USC Chinese Music Ensemble is a <strong>revival of Eastern Chamber</strong>, an innovative Chinese folk band that fused traditional instruments with pop, rock, rap, electronic, and opera. The club wound down, but the music didn't have to.
+        </p>
+        <p>
+          We're in our <strong>founding stage</strong>: setting rehearsal times, finding our space, and building the team. Whether you've played for fifteen years or just want to try a guzheng for the first time, you're exactly who we're looking for.
+        </p>
+      </div>
+    </div>
+    <div>
+      <div class="heritage-card">
+        <div class="h-label">Previously Known As</div>
+        <div class="h-name">Eastern Chamber</div>
+        <div class="h-zh">东方室内乐队</div>
+        <div class="h-desc">An innovative Chinese folk band at USC, blending erhu, pipa, guzheng, bamboo flute, suona, guqin, and drum set with pop, rock, rap, electronic, and opera influences.</div>
+        <div class="arrow-bridge">↓ Reborn as</div>
+        <div class="h-new">USC Chinese Music Ensemble</div>
+        <div class="h-new-zh">中国音乐乐团</div>
+        <div class="open-badge">
+          <strong>Open to all</strong> · students, faculty & alumni · No audition or experience required · All Chinese instruments welcome
         </div>
       </div>
     </div>
@@ -510,7 +886,7 @@ footer a:hover { color: var(--gold); }
 <section id="scorers">
   <p class="sec-eyebrow">For Filmmakers & Composers</p>
   <h2 class="sec-title">Your Score Called.<br>We Answer.</h2>
-  <p class="sec-sub">USC's film and screen-scoring programs produce hundreds of shorts and original works every year. Real Chinese instruments cut through in a way synthesis simply can't.</p>
+  <p class="sec-sub">USC's film and screen scoring programs produce hundreds of shorts and original works every year. Real Chinese instruments cut through in a way synthesis simply can't.</p>
 
   <div class="scorers-layout">
     <div>
@@ -537,12 +913,8 @@ footer a:hover { color: var(--gold); }
           </div>
         </div>
       </div>
-      <div class="scorer-proof">
-        <div class="proof-label">Proven Track Record</div>
-        <p class="proof-text">We were hired to perform live Chinese instrumentation for a USC student short film. We're actively seeking more projects — reach out with yours.</p>
-      </div>
-      <a href="mailto:usc.chinesemusic@gmail.com" class="btn-cardinal" style="margin-top:24px;">
-        Reach out with your project
+      <a href="#signup" onclick="switchFormTab('scorer')" class="btn-cardinal" style="margin-top:24px;">
+        Reach out with your project →
       </a>
     </div>
 
@@ -553,121 +925,99 @@ footer a:hover { color: var(--gold); }
         <div class="si-card"><div class="si-zh">二胡</div><div class="si-en">Erhu</div><div class="si-type">Spike Fiddle</div></div>
         <div class="si-card"><div class="si-zh">琵琶</div><div class="si-en">Pipa</div><div class="si-type">Lute</div></div>
         <div class="si-card"><div class="si-zh">笛子</div><div class="si-en">Dizi</div><div class="si-type">Bamboo Flute</div></div>
-        <div class="si-card"><div class="si-zh">唢呐</div><div class="si-en">Suona</div><div class="si-type">Double-reed Horn</div></div>
-        <div class="si-card"><div class="si-zh">古琴</div><div class="si-en">Guqin</div><div class="si-type">Scholar's Lute</div></div>
         <div class="si-card"><div class="si-zh">扬琴</div><div class="si-en">Yangqin</div><div class="si-type">Hammered Dulcimer</div></div>
-        <div class="si-card"><div class="si-zh">箫</div><div class="si-en">Xiao</div><div class="si-type">End-blown Flute</div></div>
       </div>
-      <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">+ Sheng, Zhongruan, Daruan, Hulusi, and more</p>
+      <p style="font-size:12px;color:var(--text-muted);margin-top:4px;">+ Sheng, Zhongruan, Daruan, and more</p>
+      <div style="margin-top:16px;padding:14px 16px;background:#fff8f8;border:1px solid rgba(153,0,0,0.18);border-radius:9px;">
+        <p style="font-size:9px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--cardinal);margin-bottom:5px;">Please Note</p>
+        <p style="font-size:12px;color:var(--charcoal);line-height:1.65;">Instrument availability is limited and offered on a <strong style="color:var(--cardinal);font-weight:600;">first come, first served</strong> basis, so reach out early to confirm what we can bring to your session.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- INSTRUMENTS -->
-<section id="instruments">
-  <p class="sec-eyebrow">Instruments We Play</p>
-  <h2 class="sec-title">All Chinese Instruments Welcome</h2>
-  <p class="sec-sub">From ancient to unconventional — if it belongs to the Chinese music tradition, it belongs here. Hover any card.</p>
+<!-- DONATE -->
+<section id="donate">
+  <p class="sec-eyebrow">Support the Ensemble</p>
+  <h2 class="sec-title">Help Us Grow</h2>
+  <p class="sec-sub">We're a student ensemble building from the ground up. Donations of instruments, gear, or funds go directly toward making more music.</p>
 
-  <div class="instr-grid">
-    <div class="instr-card">
-      <div class="ic-name">Guzheng</div><div class="ic-zh">古筝</div>
-      <div class="ic-desc">21-string zither. Sweeping glissandos that can fill a concert hall or anchor a film score.</div>
-      <span class="ic-tag">String</span>
+  <div class="donate-grid">
+
+    <div class="donate-card">
+      <div class="donate-card-title">Instruments</div>
+      <p class="donate-card-body">Have a Chinese instrument sitting in a closet? We'll give it a new life. We gratefully accept instruments in any condition.</p>
+      <ul class="donate-card-list">
+        <li>Guzheng, erhu, pipa, dizi, and more</li>
+        <li>Any condition considered, playable or restoration project</li>
+      </ul>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPK3t-XyqNk2vHaqffb2Iq9cbmW-MgimpLb71ZevWIPX0K1Q/viewform?usp=pp_url&amp;entry.429818479=Instruments" target="_blank" rel="noopener" class="btn-donate">Donate an instrument →</a>
     </div>
-    <div class="instr-card">
-      <div class="ic-name">Erhu</div><div class="ic-zh">二胡</div>
-      <div class="ic-desc">Two-stringed spike fiddle. Sings like a human voice — from deep sorrow to soaring elation.</div>
-      <span class="ic-tag">Bowed</span>
+
+    <div class="donate-card">
+      <div class="donate-card-title">Equipment</div>
+      <p class="donate-card-body">Recording gear, music stands, PA systems, cables, cases. The unglamorous things that keep an ensemble running.</p>
+      <ul class="donate-card-list">
+        <li>Music stands & instrument cases</li>
+        <li>Microphones, audio interfaces, cables</li>
+        <li>PA systems, monitors, mixing gear</li>
+      </ul>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPK3t-XyqNk2vHaqffb2Iq9cbmW-MgimpLb71ZevWIPX0K1Q/viewform?usp=pp_url&amp;entry.429818479=Equipment" target="_blank" rel="noopener" class="btn-donate">Donate equipment →</a>
     </div>
-    <div class="instr-card">
-      <div class="ic-name">Pipa</div><div class="ic-zh">琵琶</div>
-      <div class="ic-desc">Pear-shaped lute with sharp percussive attack. Built for virtuosic solos and battle narratives.</div>
-      <span class="ic-tag">String</span>
+
+    <div class="donate-card">
+      <div class="donate-card-title">Funds</div>
+      <p class="donate-card-body">Financial support helps us book rehearsal space, cover recording costs, print sheet music, and put on concerts.</p>
+      <ul class="donate-card-list">
+        <li>Rehearsal space & venue booking</li>
+        <li>Recording sessions & sheet music</li>
+        <li>Concert production costs</li>
+      </ul>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfPK3t-XyqNk2vHaqffb2Iq9cbmW-MgimpLb71ZevWIPX0K1Q/viewform?usp=pp_url&amp;entry.429818479=Funds" target="_blank" rel="noopener" class="btn-donate btn-donate-filled">Contribute funds →</a>
     </div>
-    <div class="instr-card">
-      <div class="ic-name">Dizi</div><div class="ic-zh">笛子</div>
-      <div class="ic-desc">Bright, buzzing bamboo flute. The paper membrane gives it a tone unlike anything in the Western tradition.</div>
-      <span class="ic-tag">Wind</span>
-    </div>
-    <div class="instr-card">
-      <div class="ic-name">Xiao</div><div class="ic-zh">箫</div>
-      <div class="ic-desc">End-blown bamboo flute — breathy and meditative. The quiet counterpart to the dizi.</div>
-      <span class="ic-tag">Wind</span>
-    </div>
-    <div class="instr-card">
-      <div class="ic-name">Suona</div><div class="ic-zh">唢呐</div>
-      <div class="ic-desc">Piercing double-reed horn that can fill a courtyard. Festive, irreverent, impossible to ignore.</div>
-      <span class="ic-tag">Wind</span>
-    </div>
-    <div class="instr-card">
-      <div class="ic-name">Guqin</div><div class="ic-zh">古琴</div>
-      <div class="ic-desc">The scholar's instrument — 3,000 years old and still speaking. Quiet, contemplative, deeply expressive.</div>
-      <span class="ic-tag">String</span>
-    </div>
-    <div class="instr-card">
-      <div class="ic-name">Zhongruan · Daruan</div><div class="ic-zh">中/大阮</div>
-      <div class="ic-desc">Mid- and bass-register lutes. The harmonic backbone — mellow, round, and essential.</div>
-      <span class="ic-tag">String</span>
-    </div>
-    <div class="instr-card">
-      <div class="ic-name">Sheng</div><div class="ic-zh">笙</div>
-      <div class="ic-desc">A free-reed mouth organ — one of the world's oldest polyphonic instruments. Rich and harmonically surprising.</div>
-      <span class="ic-tag">Wind</span>
-    </div>
-    <div class="instr-card">
-      <div class="ic-name">Yangqin</div><div class="ic-zh">扬琴</div>
-      <div class="ic-desc">Hammered dulcimer with a sparkling, piano-like shimmer. Lights up the upper register of any arrangement.</div>
-      <span class="ic-tag">Percussion</span>
-    </div>
-    <div class="instr-card">
-      <div class="ic-name">Hulusi</div><div class="ic-zh">葫芦丝</div>
-      <div class="ic-desc">A gourd flute from Yunnan — soft, warm, and reedy. One of the most distinctive sounds in Chinese folk music.</div>
-      <span class="ic-tag">Wind</span>
-    </div>
-    <div class="instr-card">
-      <div class="ic-name">Drum Set</div><div class="ic-zh">鼓</div>
-      <div class="ic-desc">Where tradition meets groove. Eastern Chamber pioneered this fusion — we're keeping it alive.</div>
-      <span class="ic-tag">Percussion</span>
-    </div>
+
   </div>
 
-  <div class="instr-footnote">
-    Also especially encouraged to join: <strong>Cellists · Double Bassists · Percussionists</strong>. Don't see your instrument? Reach out anyway — if you can make it work with Chinese music, we want to hear it.
+  <div class="donate-note">
+    <strong>All donations are appreciated.</strong> We're a newly revived student organization, and every contribution, big or small, directly shapes what we're able to do. Reach us at <a href="mailto:usc.chinesemusic@gmail.com" style="color:var(--cardinal);text-decoration:none;font-weight:600;">usc.chinesemusic@gmail.com</a> and we'll figure out the details together.
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-layout">
+<!-- INSTAGRAM -->
+<section id="instagram">
+  <div class="insta-layout">
     <div>
-      <p class="sec-eyebrow">Our Story</p>
-      <h2 class="sec-title">Rooted in Legacy,<br>Ready for What's Next</h2>
-      <div class="about-body">
-        <p>
-          USC Chinese Music Ensemble is a <strong>revival of Eastern Chamber</strong> — an innovative Chinese folk band that fused traditional instruments with pop, rock, rap, electronic, and opera. The club wound down, but the music didn't have to.
-        </p>
-        <p>
-          We're in our <strong>founding stage</strong>: setting rehearsal times, finding our space, and building the team. Whether you've played for fifteen years or just want to try a guzheng for the first time, you're exactly who we're looking for.
-        </p>
-        <p>
-          Our philosophy: <strong>traditional instruments don't have to sound traditional</strong>. We play 新民乐 — new folk music — and wherever the music takes us from there.
-        </p>
-      </div>
-    </div>
-    <div>
-      <div class="heritage-card">
-        <div class="h-label">Previously Known As</div>
-        <div class="h-name">Eastern Chamber</div>
-        <div class="h-zh">东方室内乐队</div>
-        <div class="h-desc">An innovative Chinese folk band at USC — blending erhu, pipa, guzheng, bamboo flute, suona, guqin, and drum set with pop, rock, rap, electronic, and opera influences.</div>
-        <div class="arrow-bridge">↓ Reborn as</div>
-        <div class="h-new">USC Chinese Music Ensemble</div>
-        <div class="h-new-zh">中国音乐乐团</div>
-        <div class="open-badge">
-          <strong>Open to all</strong> — students, faculty & alumni · No audition or experience required · All Chinese instruments welcome
+      <p class="sec-eyebrow">On Instagram</p>
+      <h2 class="sec-title">Follow the Revival</h2>
+      <p class="sec-sub">The feed below updates automatically with our newest posts: rehearsal announcements, performance clips, and everything in between.</p>
+      <div class="insta-pitch">
+        <div class="insta-perk">
+          <div class="insta-perk-dot"></div>
+          <div>
+            <div class="insta-perk-title">First to know</div>
+            <div class="insta-perk-body">Fall 2026 rehearsal times and our first performance dates will be announced on Instagram before anywhere else.</div>
+          </div>
         </div>
+        <div class="insta-perk">
+          <div class="insta-perk-dot"></div>
+          <div>
+            <div class="insta-perk-title">Behind the scenes</div>
+            <div class="insta-perk-body">Instrument features, member spotlights, and the lead up to our debut.</div>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/usc_chinesemusic/" target="_blank" class="insta-handle-card">
+          <div>
+            <div class="insta-handle-name">@usc_chinesemusic</div>
+            <div class="insta-handle-sub">Follow us on Instagram</div>
+          </div>
+        </a>
       </div>
+    </div>
+    <div>
+      <div class="insta-feed-wrap">
+        <iframe src="https://www.instagram.com/usc_chinesemusic/embed" title="USC Chinese Music Ensemble on Instagram" loading="lazy" scrolling="no"></iframe>
+      </div>
+      <p class="insta-feed-note">Live feed from Instagram · tap any post to open it</p>
     </div>
   </div>
 </section>
@@ -678,34 +1028,30 @@ footer a:hover { color: var(--gold); }
     <div>
       <p class="sec-eyebrow">Get Involved</p>
       <h2 class="sec-title">Be Part of the Revival</h2>
-      <p class="sec-sub">We launched in Spring 2026 and are building our roster for Fall. Rehearsals are TBD — sign up and you'll be first to know.</p>
+      <p class="sec-sub">We launched in Spring 2026 and are building our roster for Fall. Rehearsals are TBD, so sign up and you'll be first to know.</p>
       <div class="join-perks">
         <div class="perk">
-          <div class="perk-icon"></div>
           <div>
-            <div class="perk-title">All skill levels — truly</div>
+            <div class="perk-title">Genuinely all skill levels</div>
             <div class="perk-body">Beginners and conservatory players alike. We'll build the program around who shows up.</div>
           </div>
         </div>
         <div class="perk">
-          <div class="perk-icon"></div>
           <div>
             <div class="perk-title">New folk + fusion</div>
-            <div class="perk-body">Traditional foundation. Pop, rock, electronic, rap, opera — all fair game. This is 新民乐.</div>
+            <div class="perk-body">Traditional foundation. Pop, rock, electronic, rap, opera, all fair game. This is 新民乐.</div>
           </div>
         </div>
         <div class="perk">
-          <div class="perk-icon"></div>
           <div>
             <div class="perk-title">Real performances</div>
-            <div class="perk-body">Live concerts, campus events, and film scoring work — we performed on a USC student short film last year.</div>
+            <div class="perk-body">Live concerts, campus events, and film scoring work as we grow.</div>
           </div>
         </div>
         <div class="perk">
-          <div class="perk-icon"></div>
           <div>
             <div class="perk-title">Fall 2026 semester</div>
-            <div class="perk-body">We launched in Spring 2026 and are growing for Fall. Sign up now — members joining early have a say in how we run things.</div>
+            <div class="perk-body">We launched in Spring 2026 and are growing for Fall. Sign up now, and members joining early have a say in how we run things.</div>
           </div>
         </div>
       </div>
@@ -717,9 +1063,9 @@ footer a:hover { color: var(--gold); }
       </div>
     </div>
 
-    <div class="join-form">
+    <div class="join-form" id="signup">
       <div class="form-head">Express Interest</div>
-      <div class="form-sub-text">Musician or film scorer — tell us a little about yourself.</div>
+      <div class="form-sub-text">Musician or film scorer, tell us a little about yourself.</div>
 
       <div class="form-toggle">
         <button class="ft-btn active" onclick="switchFormTab('musician')">I want to play</button>
@@ -739,6 +1085,7 @@ footer a:hover { color: var(--gold); }
             <select id="year">
               <option value="">Select...</option>
               <option>Incoming freshman</option>
+              <option>Freshman</option>
               <option>Sophomore</option>
               <option>Junior</option>
               <option>Senior</option>
@@ -759,10 +1106,9 @@ footer a:hover { color: var(--gold); }
               <option>Sheng (笙)</option>
               <option>Yangqin (扬琴)</option>
               <option>Zhongruan / Daruan</option>
-              <option>Hulusi (葫芦丝)</option>
               <option>Cello / Double Bass</option>
               <option>Drum Set / Percussion</option>
-              <option>Want to learn — not sure yet</option>
+              <option>Want to learn, not sure yet</option>
               <option>Other</option>
             </select>
           </div>
@@ -784,13 +1130,13 @@ footer a:hover { color: var(--gold); }
           <label>Program</label>
           <select id="s-program">
             <option value="">Select...</option>
-            <option>SCA — Film Production</option>
-            <option>SCA — Screen Scoring / Composition</option>
-            <option>SCA — Writing for Screen & Television</option>
-            <option>Thornton — Film Scoring</option>
-            <option>Thornton — Composition</option>
+            <option>SCA · Film Production</option>
+            <option>SCA · Screen Scoring / Composition</option>
+            <option>SCA · Writing for Screen & Television</option>
+            <option>Thornton · Film Scoring</option>
+            <option>Thornton · Composition</option>
             <option>Other USC Program</option>
-            <option>External / Non-USC</option>
+            <option>External / Not USC</option>
           </select>
         </div>
         <div class="fg">
@@ -821,6 +1167,20 @@ footer a:hover { color: var(--gold); }
 </footer>
 
 <script>
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.getElementById('hamburger');
+  const open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 function switchHeroTab(which) {
   document.querySelectorAll('.hc-tab').forEach((t,i) => {
     t.classList.toggle('active', (i===0 && which==='musicians') || (i===1 && which==='scorers'));
@@ -837,21 +1197,131 @@ function switchFormTab(which) {
   document.getElementById('fs-scorer').classList.toggle('active', which==='scorer');
 }
 
+const MUSICIAN_GFORM = 'https://docs.google.com/forms/d/e/1FAIpQLScWUibBb_xB6FarLHZunNh411-Jsz1KCYHBMRXa8zWOJdYAAQ/formResponse';
+const MUSICIAN_FIELDS = {
+  name:       'entry.1866169043',
+  email:      'entry.804829859',
+  year:       'entry.778996064',
+  instrument: 'entry.1206262987',
+  background: 'entry.230026381'
+};
+const SCORER_GFORM = 'https://docs.google.com/forms/d/e/1FAIpQLSdJrAoR--ASEK9MmtYuiYY677UnSpZWKNmBx-jaE0HAgRguoQ/formResponse';
+const SCORER_FIELDS = {
+  name:    'entry.1566973934',
+  email:   'entry.856130637',
+  program: 'entry.296382350',
+  project: 'entry.290101615'
+};
+
+function showFormSuccess(btn) {
+  btn.textContent = 'Received! We\'ll be in touch soon.';
+  btn.style.background = '#1a6b3c';
+  // Clear the fields so the form is ready for another submission
+  document.querySelectorAll('.join-form input, .join-form textarea').forEach(el => el.value = '');
+  document.querySelectorAll('.join-form select').forEach(el => el.selectedIndex = 0);
+  // Reset the button after a few seconds so the form stays usable (not locked)
+  setTimeout(() => {
+    btn.textContent = 'Submit →';
+    btn.style.background = '';
+    btn.disabled = false;
+  }, 3500);
+}
+
+function formError(btn, original) {
+  btn.textContent = original;
+  btn.disabled = false;
+  alert('Something went wrong sending your message. Please try again, or email us directly at usc.chinesemusic@gmail.com.');
+}
+
 function handleSubmit() {
   const isMusician = document.getElementById('fs-musician').classList.contains('active');
-  const name = isMusician ? document.getElementById('fname') : document.getElementById('s-fname');
-  const email = isMusician ? document.getElementById('email') : document.getElementById('s-email');
-  if (!name.value.trim() || !email.value.trim()) {
-    alert('Please fill in your name and email before submitting.');
+  const val = id => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+
+  const first = isMusician ? val('fname') : val('s-fname');
+  const last  = isMusician ? val('lname') : val('s-lname');
+  const email = isMusician ? val('email') : val('s-email');
+
+  if (!first || !email) {
+    alert('Please fill in your first name and email before submitting.');
     return;
   }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  const fullName = (first + ' ' + last).trim();
   const btn = document.querySelector('.form-submit');
-  btn.textContent = '✓ Received! We\'ll be in touch soon.';
-  btn.style.background = '#1a6b3c';
+  const originalText = btn.textContent;
+  btn.textContent = 'Sending…';
   btn.disabled = true;
-  document.querySelectorAll('.join-form input, .join-form select, .join-form textarea').forEach(el => el.disabled = true);
-  document.querySelectorAll('.ft-btn').forEach(el => el.disabled = true);
+
+  if (isMusician) {
+    // Musicians → Google Form (collects in a spreadsheet)
+    const body = new URLSearchParams();
+    body.append(MUSICIAN_FIELDS.name, fullName);
+    body.append(MUSICIAN_FIELDS.email, email);
+    body.append(MUSICIAN_FIELDS.year, val('year') || '(not provided)');
+    body.append(MUSICIAN_FIELDS.instrument, val('instrument') || '(not provided)');
+    body.append(MUSICIAN_FIELDS.background, val('background') || '(none)');
+    fetch(MUSICIAN_GFORM, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString()
+    })
+    .then(() => showFormSuccess(btn))
+    .catch(() => formError(btn, originalText));
+  } else {
+    // Film scorers → Google Form (collects in a spreadsheet)
+    const body = new URLSearchParams();
+    body.append(SCORER_FIELDS.name, fullName);
+    body.append(SCORER_FIELDS.email, email);
+    body.append(SCORER_FIELDS.program, val('s-program') || '(not provided)');
+    body.append(SCORER_FIELDS.project, val('s-project') || '(none)');
+    fetch(SCORER_GFORM, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString()
+    })
+    .then(() => showFormSuccess(btn))
+    .catch(() => formError(btn, originalText));
+  }
 }
+
+/* Scroll-reveal: fade + rise elements as they enter the viewport, with stagger inside grids */
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const hero = document.getElementById('hero');
+  const sel = '.sec-eyebrow, .sec-title, .sec-sub, .scorer-num, .si-card, .btn-cardinal,'
+            + '.instr-grid, .instr-footnote, .video-card, .heritage-card, .about-body,'
+            + '.donate-card, .donate-note, .perk, .social-row, .join-form,'
+            + '.insta-perk, .insta-handle-card, .insta-feed-wrap';
+  const staggerParents = ['scorer-nums', 'scorer-instr-grid', 'video-grid', 'join-perks', 'insta-pitch', 'donate-grid'];
+  const els = Array.prototype.slice.call(document.querySelectorAll(sel))
+    .filter(el => !hero.contains(el));
+
+  els.forEach(el => {
+    el.classList.add('reveal');
+    const p = el.parentElement;
+    if (p && staggerParents.some(c => p.classList.contains(c))) {
+      const idx = Array.prototype.indexOf.call(p.children, el);
+      el.style.transitionDelay = Math.min(idx * 65, 400) + 'ms';
+    }
+  });
+
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(el => el.classList.add('in-view'));
+    return;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  els.forEach(el => io.observe(el));
+})();
 </script>
 </body>
 </html>
