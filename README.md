@@ -24,10 +24,17 @@ USC's ensemble for traditional Chinese instruments, founded Spring 2026 and rebo
 ```
 /
 ├── index.html        # Single-page site (all CSS, JS and logos inline)
+├── photos/           # Event photos (each in a full size and a smaller phone size)
+│   ├── cover.jpg, cover-1000.jpg            # Cover photo
+│   └── recording.jpg, recording-800.jpg     # Filmmakers section photo (short film recording session)
 └── README.md
 ```
 
-The site is one self-contained HTML file with no build step and no framework. Styles, scripts, the logos and the tab icon are all inside `index.html` (the logos are embedded as base64 images). Two things load from outside: the fonts (Newsreader and Noto Serif SC from Google Fonts) and the video thumbnails (straight from YouTube).
+The site has no build step and no framework. Styles, scripts, the logos and the tab icon are all inside `index.html` (the logos are embedded as base64 images). The event photos live in `photos/`, so **always upload the `photos` folder along with `index.html`** when it changes, or the photos will show as broken. Two things load from outside: the fonts (Newsreader and Noto Serif SC from Google Fonts) and the video thumbnails (straight from YouTube).
+
+To swap a photo, replace the file in `photos/` with a new one of the same name (landscape, about 2000px wide for the cover and 1400 to 1600px for the others, under about 300 KB), or point the `src` and `srcset` in `index.html` at a new file. Strip location data from phone photos before uploading.
+
+Photo sources: the cover photo is from USC Spoon's Crazy Rich Asians event; the Filmmakers photo is from the ensemble recording for a short film in Spring 2026.
 
 The page is designed like a bilingual concert program. Sections in order: cover, Past performances, Instruments, Our story, Filmmakers and composers, Support the ensemble, Instagram, Join us (with the sign-up form and FAQ), footer.
 
